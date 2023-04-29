@@ -9,6 +9,7 @@ namespace Projeto_loja_virtual
     {
         public void MenuInicial() {
             string resposta = "";
+            string input = "";
             // INICIO
 
 
@@ -29,12 +30,42 @@ namespace Projeto_loja_virtual
             Console.ResetColor();
 
             resposta = Console.ReadLine();
-
             switch(resposta){
+
                 case"1":
                 Console.Clear();
+                //Boleto
                 
-                // Boleto
+                do {
+                    Console.WriteLine(@$"
+            [1] Finalizar compra
+            [2] Cancelar Operação
+                    ");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine($"Insira o valor desejado:");
+                    Console.ResetColor();
+                    input = Console.ReadLine();
+                    switch(input) {
+                        case "1":
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"Compra Finalizada...");
+                        Console.ResetColor();
+
+                        // Como ainda n tenho nenhuma váriavel eu n botei pra imprimir o novo saldo ent só ta saindo do programa
+                        Environment.Exit(0);
+                        break;
+                        case"2":
+                        Console.Clear();
+                        break;
+                        default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Clear();
+                        Console.WriteLine($"Valor inválido, tente novamente...");
+                        Console.ResetColor();       
+                        break;
+                    }
+                    
+                } while(input != "2");
 
                 break;
                 case"2":
@@ -63,6 +94,7 @@ namespace Projeto_loja_virtual
 
         public void MenuCartão() {
             string resposta = "";
+            string input = "";
 
             do {
                 Console.Clear();
@@ -71,13 +103,45 @@ namespace Projeto_loja_virtual
                 [2] Cartão de Crédito
                 [3] Cancelar operação
                 ");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.WriteLine($"Insira o tipo do cartão");
-                
+                Console.ResetColor();
                 resposta = Console.ReadLine();
                 switch(resposta) {
                     case"1":
 
                     //Cartão de Débito
+                    
+                    do {
+                    Console.WriteLine(@$"
+                    [1] Finalizar compra
+                    [2] Cancelar Operação
+                            ");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
+                            Console.WriteLine($"Insira o valor desejado:");
+                            Console.ResetColor();
+                            input = Console.ReadLine();
+                            switch(input) {
+                                case "1":
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine($"Compra Finalizada...");
+                                Console.ResetColor();
+
+                                // Como ainda n tenho nenhuma váriavel eu n botei pra imprimir o novo saldo ent só ta saindo do programa
+                                Environment.Exit(0);
+                                break;
+                                case"2":
+                                Console.Clear();
+                                break;
+                                default:
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Clear();
+                                Console.WriteLine($"Valor inválido, tente novamente...");
+                                Console.ResetColor();
+                                break;
+                            }
+                            
+                    } while(input != "2");
 
 
                     break;
@@ -85,6 +149,37 @@ namespace Projeto_loja_virtual
                     case"2":
 
                     //Cartão de Crédito
+
+                    do {
+                    Console.WriteLine(@$"
+                    [1] Finalizar compra
+                    [2] Cancelar Operação
+                            ");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
+                            Console.WriteLine($"Insira o valor desejado:");
+                            Console.ResetColor();
+                            input = Console.ReadLine();
+                            switch(input) {
+                                case "1":
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine($"Compra Finalizada...");
+                                Console.ResetColor();
+
+                                // Como ainda n tenho nenhuma váriavel eu n botei pra imprimir o novo saldo ent só ta saindo do programa
+                                Environment.Exit(0);
+                                break;
+                                case"2":
+                                Console.Clear();
+                                break;
+                                default:
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Clear();
+                                Console.WriteLine($"Valor inválido, tente novamente...");
+                                Console.ResetColor();
+                                break;
+                            }
+                            
+                    } while(input != "2");
 
                     break;
 

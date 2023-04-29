@@ -8,16 +8,11 @@
     "net7.0": []
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\User\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\46633783825\\.nuget\\packages\\": {}
->>>>>>> origin/guilherme
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
       "projectName": "Projeto_loja_virtual",
       "projectPath": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
@@ -26,16 +21,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-      "projectName": "Projeto_loja_virtual",
-      "projectPath": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-      "packagesPath": "C:\\Users\\46633783825\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\46633783825\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> origin/guilherme
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -76,12 +61,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
->>>>>>> origin/guilherme
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

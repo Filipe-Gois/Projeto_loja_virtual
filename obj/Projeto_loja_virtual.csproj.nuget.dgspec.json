@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-        "projectName": "Projeto_loja_virtual",
-        "projectPath": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-        "packagesPath": "C:\\Users\\46633783825\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\46633783825\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> origin/guilherme
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,11 +55,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
->>>>>>> origin/guilherme
         }
       }
     }
