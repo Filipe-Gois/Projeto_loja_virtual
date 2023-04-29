@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_loja_virtual
 {
-    public class CartaoCredito
+    public class CartaoCredito : Cartao
     {
         // - limite estabelecido no cartão de crédito deve ser pré-definido
         // - máximo de parcelamento 12x
@@ -13,7 +13,6 @@ namespace Projeto_loja_virtual
         // - entre 7x e 12x acrescentar juros de 8% no valor da compra
 
         private float Limite = 1000;
-        public float ValorCompra;
         public float ValorFinal;
         public int Parcelas;
 
@@ -27,9 +26,9 @@ namespace Projeto_loja_virtual
         public float CreditoMetodo()
         {
             Console.WriteLine($"Informe o valor do produto:");
-            ValorCompra = float.Parse(Console.ReadLine()!);
+            this.Valor = float.Parse(Console.ReadLine()!);
 
-            if (ValorCompra <= Limite)
+            if (this.Valor <= Limite)
             {
 
             do
@@ -47,7 +46,7 @@ namespace Projeto_loja_virtual
 
             if (Parcelas <= 6)
             {
-                ValorFinal = (ValorCompra * 1.05f) / Parcelas;
+                ValorFinal = (this.Valor * 1.05f) / Parcelas;
 
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine();
@@ -60,7 +59,7 @@ namespace Projeto_loja_virtual
 
             else
             {
-                ValorFinal = (ValorCompra * 1.08f) / Parcelas;
+                ValorFinal = (this.Valor * 1.08f) / Parcelas;
 
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine();
