@@ -71,7 +71,7 @@ namespace Projeto_loja_virtual
             }
             else 
             {
-                Console.WriteLine($"Limite estourado.");
+                Console.WriteLine($"Limite do cartão estourado.");
                 return 0;
             }   
         }
