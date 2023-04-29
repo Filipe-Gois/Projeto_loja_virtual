@@ -21,19 +21,17 @@ namespace Projeto_loja_virtual
         public void ExibirLimite()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Limite atual do cartão: {Limite.ToString("C")}");
+            Console.WriteLine($"Limite atual do cartão: {1000.ToString("C")}");
             Console.ResetColor();
         }
         public float CreditoMetodo()
         {
-            if (ValorCompra < Limite)
-            {
-                
-            }
-
             Console.WriteLine($"Informe o valor do produto:");
             ValorCompra = float.Parse(Console.ReadLine()!);
-            
+
+            if (ValorCompra <= Limite)
+            {
+
             do
             {
                 Console.WriteLine(@$"
@@ -47,17 +45,17 @@ namespace Projeto_loja_virtual
             } while (Parcelas > 12 || Parcelas <= 0);
 
 
-
             if (Parcelas <= 6)
             {
                 ValorFinal = (ValorCompra * 1.05f) / Parcelas;
 
                 Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine();
+                
                 Console.WriteLine($"Total: {Math.Round(ValorFinal, 2).ToString("C")} de {Parcelas} vezes com juros.");
                 Console.ResetColor();
 
                 return ValorFinal;
-
             }
 
             else
@@ -65,12 +63,21 @@ namespace Projeto_loja_virtual
                 ValorFinal = (ValorCompra * 1.08f) / Parcelas;
 
                 Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine();
+                
                 Console.WriteLine($"Total: {Math.Round(ValorFinal, 2).ToString("C")} de {Parcelas}x com juros.");
                 Console.ResetColor();
 
                 return ValorFinal;
 
             }
+            }
+            else 
+            {
+                Console.WriteLine($"Saldo insuficiente.");
+                return 0;
+            }   
+        }
         }
     }
-}
+

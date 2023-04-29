@@ -1,9 +1,8 @@
 ﻿using Projeto_loja_virtual;
 
 CartaoCredito credito = new CartaoCredito();
-
-Console.WriteLine($"Olá, seja bem-vindo!");
-
+Console.WriteLine();
 credito.ExibirLimite();
+Console.WriteLine();
 
 credito.CreditoMetodo();
