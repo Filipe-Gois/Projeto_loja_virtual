@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "2K/oAdaOFndvpPNBvwZb8fbsnR/uSYAE7ujyRStq+ZGp4rzz7600OHSOU/CrAH/FMflL0CgvKfYCUDbgWpwVAQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\fytho\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-=======
-  "dgSpecHash": "Bb7FV6GHkeQB7NwfauZKR0ge72uC3wP4YUFMzP34AiQzTWre/PjdVcb0MATeCmm7kLji48SQaSvMMVjzQ65Hkw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
->>>>>>> origin/guilherme
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\fytho\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
