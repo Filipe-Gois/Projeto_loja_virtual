@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fytho\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {}
+    "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fytho\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {
+    "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fytho\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
         "projectName": "Projeto_loja_virtual",
-        "projectPath": "C:\\Users\\fytho\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-        "packagesPath": "C:\\Users\\fytho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fytho\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fytho\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

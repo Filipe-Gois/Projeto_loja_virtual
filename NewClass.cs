@@ -26,9 +26,9 @@ namespace Projeto_loja_virtual
             [2] Cartão de Débito
             [3] Cartão de Crédito
             [4] Sair");
-
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine($"\nEscolha a Forma de pagamento:");
-            
+            Console.ResetColor();
 
             resposta = Console.ReadLine();
 
@@ -50,7 +50,8 @@ namespace Projeto_loja_virtual
                 break;
                 default:
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Valor inválido, tente novamente");
+                Console.Clear();
+                Console.WriteLine($"Valor inválido, tente novamente...");
                 Console.ResetColor();
                 break;
             }
