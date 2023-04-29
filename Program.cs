@@ -6,5 +6,7 @@ credito.ExibirLimite();
 Console.WriteLine();
 
 credito.CreditoMetodo();
-
-credito.Pagar();
+if (credito.Valor < 1000)
+{
+    credito.Pagar();
+}

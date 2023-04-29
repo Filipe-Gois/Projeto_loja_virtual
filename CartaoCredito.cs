@@ -6,17 +6,21 @@ namespace Projeto_loja_virtual
 {
     public class CartaoCredito : Cartao
     {        
+        // Atributos
         private float Limite = 1000;
         public float ValorFinal;
         public int Parcelas;
 
+        // Métodos
 
+        // Método para exibir o limite do cartão de crédito
         public void ExibirLimite()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"Limite atual do cartão: {1000.ToString("C")}");
             Console.ResetColor();
         }
+        // Método para calcular e retornar o valor total da compra no cartão de crédito
         public float CreditoMetodo()
         {
             Console.WriteLine($"Informe o valor do produto:");
@@ -67,21 +71,19 @@ namespace Projeto_loja_virtual
             }
             else 
             {
-                Console.WriteLine($"Saldo insuficiente.");
+                Console.WriteLine($"Limite estourado.");
                 return 0;
             }   
         }
+
+        // Método para exibir a mensagem de "Compra concluída"
         public override void Pagar()
         {
             Console.WriteLine();
-            
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"Compra conluída!");
-            Console.ResetColor();
-            
-        }
-        
-           
+            Console.ResetColor(); 
+        }  
         }
         }
     
