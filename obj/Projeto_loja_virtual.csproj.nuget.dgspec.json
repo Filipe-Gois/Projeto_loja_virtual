@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {}
+    "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {}
   },
   "projects": {
-    "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {
+    "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+        "projectUniqueName": "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
         "projectName": "Projeto_loja_virtual",
-        "projectPath": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-        "packagesPath": "C:\\Users\\46633783825\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\46633783825\\Desktop\\Projeto_loja_virtual\\obj\\",
+        "projectPath": "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+        "packagesPath": "C:\\Users\\Predo Gabirel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\46633783825\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Predo Gabirel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
