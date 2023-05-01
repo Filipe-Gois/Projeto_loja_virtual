@@ -17,7 +17,7 @@ namespace Projeto_loja_virtual
         public void ExibirLimite()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Limite atual do cartão: {1000.ToString("C")}");
+            Console.WriteLine($"Limite atual do cartão: {Limite.ToString("C")}");
             Console.ResetColor();
         }
         // Método para calcular e retornar o valor total da compra no cartão de crédito
