@@ -8,8 +8,12 @@ namespace Projeto_loja_virtual{
 
         // Métodos
         public abstract void Pagar();
-        public string SalvarCartao(){
-            return "Cartão Salvo"
+        public string SalvarCartao(string bandeiraInformada, string numeroInformado, string titularInformado, string cvvInformado){
+            this.Bandeira = bandeiraInformada;
+            this.NumeroCartao = numeroInformado;
+            this.Titular = titularInformado;
+            this.Cvv = cvvInformado;
+            return $"Cartão salvo com sucesso!\nPressione ENTER para continuar...";
         }
     }
 }
