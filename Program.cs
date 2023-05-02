@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Projeto_loja_virtual;
+MenuClass teste = new MenuClass();
+teste.MenuInicial();
