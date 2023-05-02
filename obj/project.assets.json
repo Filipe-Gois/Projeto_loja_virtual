@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\47015003805\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+      "projectUniqueName": "C:\\Users\\47015003805\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
       "projectName": "Projeto_loja_virtual",
-      "projectPath": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\obj\\",
+      "projectPath": "C:\\Users\\47015003805\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+      "packagesPath": "C:\\Users\\47015003805\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\47015003805\\Desktop\\Projeto_loja_virtual\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\47015003805\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,16 +61,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

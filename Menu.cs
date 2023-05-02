@@ -10,6 +10,7 @@ namespace Projeto_loja_virtual
         public void MenuInicial() {
             string resposta = "";
             string input = "";
+            bool sair = false;
             // INICIO
 
 
@@ -26,17 +27,20 @@ namespace Projeto_loja_virtual
             [2] Cartão 
             [3] Sair");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine($"\nEscolha a Forma de pagamento:");
             Console.ResetColor();
 
-            resposta = Console.ReadLine();
+            resposta = Console.ReadLine()!;
             switch(resposta){
 
                 case"1":
+                Boleto pagamento = new Boleto();
+                Console.WriteLine($"\nInsira o valor da compra:");
+                pagamento.Valor = float.Parse(Console.ReadLine()!);
                 Console.Clear();
                 //Boleto
                 
                 do {
+                    pagamento.Registrar();
                     Console.WriteLine(@$"
             [1] Finalizar compra
             [2] Cancelar Operação
@@ -44,7 +48,7 @@ namespace Projeto_loja_virtual
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     Console.WriteLine($"Insira o valor desejado:");
                     Console.ResetColor();
-                    input = Console.ReadLine();
+                    input = Console.ReadLine()!;
                     switch(input) {
                         case "1":
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -75,10 +79,21 @@ namespace Projeto_loja_virtual
                 
                 break;
                 case"3":
-                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"\nSair do programa? S/N\n");
+                Console.ResetColor();
+                resposta = Console.ReadLine()!.ToUpper();
+                if (resposta == "S") {
+                    Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Finalizando o programa...");
                 Console.ResetColor();
+                    sair = true;
+                }
+                else {
+                    sair = false;
+                    Console.Clear();
+                }
                 break;
                 default:
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -87,7 +102,7 @@ namespace Projeto_loja_virtual
                 Console.ResetColor();
                 break;
             }
-            } while (resposta != "3");
+            } while (!sair);
             
             // FIM
         }
@@ -106,7 +121,7 @@ namespace Projeto_loja_virtual
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.WriteLine($"Insira o tipo do cartão");
                 Console.ResetColor();
-                resposta = Console.ReadLine();
+                resposta = Console.ReadLine()!;
                 switch(resposta) {
                     case"1":
 
@@ -120,7 +135,7 @@ namespace Projeto_loja_virtual
                             Console.ForegroundColor = ConsoleColor.DarkGray;
                             Console.WriteLine($"Insira o valor desejado:");
                             Console.ResetColor();
-                            input = Console.ReadLine();
+                            input = Console.ReadLine()!;
                             switch(input) {
                                 case "1":
                                 Console.ForegroundColor = ConsoleColor.Green;
@@ -158,7 +173,7 @@ namespace Projeto_loja_virtual
                             Console.ForegroundColor = ConsoleColor.DarkGray;
                             Console.WriteLine($"Insira o valor desejado:");
                             Console.ResetColor();
-                            input = Console.ReadLine();
+                            input = Console.ReadLine()!;
                             switch(input) {
                                 case "1":
                                 Console.ForegroundColor = ConsoleColor.Green;

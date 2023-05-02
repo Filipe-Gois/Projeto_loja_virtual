@@ -30,7 +30,7 @@ namespace Projeto_loja_virtual
             Valor do boleto: {this.Valor.ToString("C", new CultureInfo("pt-BR"))}
             Código de barras: {CodigoBarras()}
 
-            Seu boleto vence em 3 dias.
+            Seu boleto vence em 3 dias no dia {this.GerarData()}
             ____________________________________________________________________________
             ");
         }

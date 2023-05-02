@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K313XisDT+wTFNFgi+HOwKipweXfhowi+rrRLB/6meADdt0cagO0odAuSiaofh9SrITOdDp1KvAboyhJwEaaFQ==",
+  "dgSpecHash": "4cxH28PzOkayu7L2Zm2oj00TrPM0l+lDIcgczau1t37u1qIFcks74kTL+yJ75RCnOFcQG6u28aePgRhbDJjaWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+  "projectFilePath": "C:\\Users\\47015003805\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\User\\Desktop\\Projeto_loja_virtual\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
