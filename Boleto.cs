@@ -1,6 +1,5 @@
 using System.Globalization;
 using System;
-using static System.Globalization.CultureInfo;
 
 namespace Projeto_loja_virtual
 {
@@ -28,7 +27,7 @@ namespace Projeto_loja_virtual
             ____________________________________________________________________________
             
             Beneficiário: Projeto Loja Virtual
-            Valor do boleto: {this.Valor.ToString(CultureInfo.GetCultureInfo("pt-BR"))}
+            Valor do boleto: {this.Valor.ToString("C", new CultureInfo("pt-BR"))}
             Código de barras: {CodigoBarras()}
 
             Seu boleto vence em 3 dias.

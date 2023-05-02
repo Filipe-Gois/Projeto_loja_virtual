@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Predo Gabirel\\.nuget\\packages\\": {}
+    "C:\\Users\\muril\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+      "projectUniqueName": "C:\\Users\\muril\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
       "projectName": "Projeto_loja_virtual",
-      "projectPath": "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
-      "packagesPath": "C:\\Users\\Predo Gabirel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Predo Gabirel\\Desktop\\Projeto_loja_virtual\\obj\\",
+      "projectPath": "C:\\Users\\muril\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\Projeto_loja_virtual.csproj",
+      "packagesPath": "C:\\Users\\muril\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\muril\\OneDrive\\Área de Trabalho\\Projeto_loja_virtual\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Predo Gabirel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\muril\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
       }
     }
   }
