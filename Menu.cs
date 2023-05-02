@@ -10,6 +10,7 @@ namespace Projeto_loja_virtual
         public void MenuInicial() {
             string resposta = "";
             string input = "";
+            bool sair = false;
             // INICIO
 
 
@@ -26,7 +27,7 @@ namespace Projeto_loja_virtual
             [2] Cartão 
             [3] Sair");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine($"\nEscolha a Forma de pagamento:");
+            Console.WriteLine($"\nInsira o valor desejado:");
             Console.ResetColor();
 
             resposta = Console.ReadLine();
@@ -75,10 +76,21 @@ namespace Projeto_loja_virtual
                 
                 break;
                 case"3":
-                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"\nSair do programa? S/N\n");
+                Console.ResetColor();
+                resposta = Console.ReadLine().ToUpper();
+                if (resposta == "S") {
+                    Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Finalizando o programa...");
                 Console.ResetColor();
+                    sair = true;
+                }
+                else {
+                    sair = false;
+                    Console.Clear();
+                }
                 break;
                 default:
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -87,7 +99,7 @@ namespace Projeto_loja_virtual
                 Console.ResetColor();
                 break;
             }
-            } while (resposta != "3");
+            } while (!sair);
             
             // FIM
         }
