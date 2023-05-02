@@ -9,7 +9,8 @@ namespace Projeto_loja_virtual
     {        
         // Atributos
         private float Limite = 1000;
-        public float ValorFinal;
+        public float ValorParcela;
+        public double ValorFinal;
         public int Parcelas;
 
         // Métodos
@@ -85,14 +86,52 @@ namespace Projeto_loja_virtual
             
             Console.WriteLine($"Informe em quantas parcelas deseja pagar o produto: (máximo de 12 parcelas)");
             this.Parcelas = int.Parse(Console.ReadLine()!);
-            do{
+              
+            while(this.Parcelas > 12 || this.Parcelas <= 0){
                 Console.WriteLine($"Número de parcelas inválido. Digite entre 1 ou 12 parcelas");
                 this.Parcelas = int.Parse(Console.ReadLine()!);
-            } while(this.Parcelas > 12 || this.Parcelas <= 0);
+            }
+
+            this.ValorParcela = this.Valor / this.Parcelas;
+
+
+            do{
+                if(this.ValorParcela > this.Limite){
+                    Console.WriteLine($"\nLimite do cartão excedido");
+                    Console.WriteLine($"\nSelecione o número de parcelas pensando em valores que não excedam o limte de seu cartão:");
+                    this.Parcelas = int.Parse(Console.ReadLine()!);
+                    this.ValorParcela = this.Valor / this.Parcelas;
+                    this.ValorFinal = this.ValorParcela;
+                }else if(this.Parcelas == 1){
+                    ValorFinal = this.ValorParcela;
+
+                }
+                 else if (this.Parcelas <= 6)
+                {
+                this.ValorFinal = this.ValorParcela * 1.05d;
+
+             } else
+             {
+                 this.ValorFinal = this.ValorParcela * 1.08d;
+
+            }
+            } while(this.ValorFinal > this.Limite);
+            
 
             Console.ResetColor(); 
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine();
+            
+            if(this.Parcelas > 1){
+                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2).ToString("C", new CultureInfo("pt-br"))} de {this.Parcelas}x sem juros.");
+            } else{
+                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2).ToString("C", new CultureInfo("pt-br"))} de {this.Parcelas}x com juros.");
+            }
+            
+            Console.ResetColor();
         }  
-        }
-        }
+    }
+}
     
 

@@ -4,9 +4,7 @@ CartaoCredito credito = new CartaoCredito();
 Console.WriteLine();
 credito.ExibirLimite();
 Console.WriteLine();
-
-credito.CreditoMetodo();
-if (credito.Valor < 1000)
-{
-    credito.Pagar();
-}
+Console.WriteLine($"Digite o valor do Produto:");
+credito.Valor = float.Parse(Console.ReadLine()!);
+Console.WriteLine();
+credito.Pagar();

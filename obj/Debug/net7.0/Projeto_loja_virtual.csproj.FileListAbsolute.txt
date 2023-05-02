@@ -28,3 +28,18 @@ C:\Users\muril\OneDrive\Área de Trabalho\Projeto_loja_virtual\obj\Debug\net7.0\
 C:\Users\muril\OneDrive\Área de Trabalho\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.pdb
 C:\Users\muril\OneDrive\Área de Trabalho\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.genruntimeconfig.cache
 C:\Users\muril\OneDrive\Área de Trabalho\Projeto_loja_virtual\obj\Debug\net7.0\ref\Projeto_loja_virtual.dll
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\bin\Debug\net7.0\Projeto_loja_virtual.exe
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\bin\Debug\net7.0\Projeto_loja_virtual.deps.json
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\bin\Debug\net7.0\Projeto_loja_virtual.runtimeconfig.json
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\bin\Debug\net7.0\Projeto_loja_virtual.dll
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\bin\Debug\net7.0\Projeto_loja_virtual.pdb
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.csproj.AssemblyReference.cache
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.AssemblyInfoInputs.cache
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.AssemblyInfo.cs
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.csproj.CoreCompileInputs.cache
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.dll
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\refint\Projeto_loja_virtual.dll
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.pdb
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\Projeto_loja_virtual.genruntimeconfig.cache
+C:\Users\47015003805\Desktop\Projeto_loja_virtual\obj\Debug\net7.0\ref\Projeto_loja_virtual.dll
