@@ -8,12 +8,26 @@ namespace Projeto_loja_virtual{
 
         // Métodos
         public abstract void Pagar();
-        public string SalvarCartao(string bandeiraInformada, string numeroInformado, string titularInformado, string cvvInformado){
-            this.Bandeira = bandeiraInformada;
-            this.NumeroCartao = numeroInformado;
-            this.Titular = titularInformado;
-            this.Cvv = cvvInformado;
-            return $"Cartão salvo com sucesso!\nPressione ENTER para continuar...";
+
+        public string SalvarCartao(){
+            bool informacoesValidas = true;
+            Console.WriteLine($"Qual a bandeira do cartão:");
+            this.Bandeira = Console.ReadLine()!;
+
+            Console.WriteLine($"Qual o número do cartão:");
+            this.NumeroCartao = Console.ReadLine()!;
+
+            Console.WriteLine($"Qual o titular do cartão:");
+            this.Titular = Console.ReadLine()!;
+
+            Console.WriteLine($"Qual o cvv do cartão:");
+            this.Cvv = Console.ReadLine()!;
+
+            if((this.Bandeira == "") || (this.NumeroCartao == "") || (this.Titular == "") || (this.Cvv == "")){
+                informacoesValidas = false;
+            }
+
+            return (informacoesValidas) ? $"Cartão salvo com sucesso!\nPressione ENTER para continuar..." : $"Falha ao cadastrar o cartão!\nPressione ENTER oara inserir os dados novamente...";
         }
     }
 }
