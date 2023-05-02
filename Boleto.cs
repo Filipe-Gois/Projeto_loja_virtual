@@ -5,13 +5,13 @@ namespace Projeto_loja_virtual
 {
     public class Boleto : Pagamento
     {
+        //Propriedades
         Random CodigoDeBarras = new Random();
-        // public DateTime Data;
 
-    
+        //Métodos
         private string CodigoBarras()
         {
-
+            //Código de barras
             return $"0339{CodigoDeBarras.Next(9).ToString()}.{CodigoDeBarras.Next(9000).ToString()}5 {CodigoDeBarras.Next(90000).ToString()}.{CodigoDeBarras.Next(9000).ToString()}5 {CodigoDeBarras.Next(90000).ToString()}.{CodigoDeBarras.Next(9000).ToString()}5 {CodigoDeBarras.Next(9).ToString()} {CodigoDeBarras.Next(90000).ToString()}.{CodigoDeBarras.Next(90000).ToString()}";
         }
 
