@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace Projeto_loja_virtual
 {
     public class MenuClass
     {
-        public void MenuInicial(float valorInformado) {
+        public void MenuInicial(float valorInformado, bool creditoCadastrado, bool debitoCadastrado) {
             string resposta = "";
             string input = "";
             bool sair = false;
@@ -19,7 +20,7 @@ namespace Projeto_loja_virtual
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"            === Bem-vindo ===");
             Console.ResetColor();
-            Console.WriteLine($"\nValor da compra: {valorInformado}");
+            Console.WriteLine($"\nValor da compra: {valorInformado.ToString("C", new CultureInfo("pt-br"))}");
             Thread.Sleep(1000);
 
             do {
@@ -41,7 +42,7 @@ namespace Projeto_loja_virtual
                 //Boleto
                 
                 do {
-                    pagamentoBoleto.Valor = valorInformado;
+                    pagamentoBoleto.ValorInicial = valorInformado;
                     pagamentoBoleto.Registrar();
                     Console.WriteLine(@$"
             [1] Finalizar compra
@@ -61,6 +62,8 @@ namespace Projeto_loja_virtual
 
                         case"2":
                         pagamentoBoleto.Cancelar();
+                        MenuInicial(valorInformado, creditoCadastrado, debitoCadastrado);
+                        Console.Clear();
                         break;
 
                         default:
@@ -74,12 +77,11 @@ namespace Projeto_loja_virtual
                     }
                     
                 } while(input != "2");
-
                 break;
                 case"2":
                 Console.Clear();
                 
-                MenuCartao(valorInformado);
+                MenuCartao(valorInformado, debitoCadastrado, creditoCadastrado);
                 
                 break;
                 case"3":
@@ -88,11 +90,12 @@ namespace Projeto_loja_virtual
                 Console.ResetColor();
                 resposta = Console.ReadLine()!.ToUpper();
                 if (resposta == "S") {
-                    Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Finalizando o programa...");
+                Thread.Sleep(3000);
                 Console.ResetColor();
                     sair = true;
+                    Environment.Exit(0);
                 }
                 else {
                     sair = false;
@@ -111,26 +114,24 @@ namespace Projeto_loja_virtual
             // FIM
         }
 
-        public void MenuCartao(float valorInformado) {
+        public void MenuCartao(float valorInformado,bool creditoCadastrado, bool debitoCadastrado) {
             string resposta = "";
             string cadastroCartao = "";
             string outroCartao = "";
             string input = "";
-            bool creditoCadastrado = false;
-            bool debitoCadastrado = false;
             string bandeira = "";
             string numeroCartao = "";
             string titular = "";
             string cvv = "";
             Debito pagamentoDebito = new Debito();
-            pagamentoDebito.Valor = valorInformado;
+            pagamentoDebito.ValorInicial = valorInformado;
             CartaoCredito pagamentoCredito = new CartaoCredito();
-            pagamentoCredito.Valor = valorInformado;
+            pagamentoCredito.ValorInicial = valorInformado;
 
             do {
                 Console.Clear();
-                Console.WriteLine($"\nValor da compra: {valorInformado}\n");
-                Console.WriteLine(@$"Escolha dentre as opções de cartão abaixo:
+                Console.WriteLine($"\nValor da compra: {valorInformado.ToString("C", new CultureInfo("pt-br"))}\n");
+                Console.WriteLine(@$"Escolha dentre as opções abaixo:
 
                 [1] Cartão de Débito
                 [2] Cartão de Crédito
@@ -148,40 +149,54 @@ namespace Projeto_loja_virtual
                         if(debitoCadastrado == false){
                             Console.WriteLine($"\nCadastro de novo cartão:");
                 
-            Console.WriteLine($"\nQual a bandeira do cartão:");
-            bandeira = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual a bandeira do cartão:");
+                            bandeira = Console.ReadLine()!;
 
-            while(bandeira == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para a bandeira do cartão:");
-                bandeira = Console.ReadLine()!;
-            }
+                            while(bandeira == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para a bandeira do cartão:");
+                                bandeira = Console.ReadLine()!;
+                            }
 
-            Console.WriteLine($"\nQual o número do cartão:");
-            numeroCartao = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual o número do cartão:");
+                            numeroCartao = Console.ReadLine()!;
 
-            while(numeroCartao == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o número do cartão:");
-                numeroCartao = Console.ReadLine()!;
-            }
+                            while(numeroCartao == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o número do cartão:");
+                                numeroCartao = Console.ReadLine()!;
+                            }
 
-            Console.WriteLine($"\nQual o titular do cartão:");
-            titular = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual o titular do cartão:");
+                            titular = Console.ReadLine()!;
 
-            while(titular == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o titular do cartão:");
-                titular = Console.ReadLine()!;
-            }
+                            while(titular == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o titular do cartão:");
+                                titular = Console.ReadLine()!;
+                            }
 
-            Console.WriteLine($"\nQual o cvv do cartão:");
-            cvv = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual o cvv do cartão:");
+                            cvv = Console.ReadLine()!;
 
-            while(cvv == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o cvv do cartão:");
-                cvv = Console.ReadLine()!;
-            }
+                            while(cvv == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o cvv do cartão:");
+                                cvv = Console.ReadLine()!;
+                            }
+
                             Console.WriteLine(pagamentoDebito.SalvarCartao(bandeira, numeroCartao, titular, cvv));
                             debitoCadastrado = true;
                         }
+
+                            if(debitoCadastrado){
+                                Console.WriteLine($"\nDeseja cadastrar este mesmo cartão para Crétito? (s/n)");
+                                outroCartao = Console.ReadLine()!.ToLower();
+                                while(outroCartao != "s" && outroCartao != "n"){
+                                    Console.WriteLine($"Opção informada inválida. Escolha entre (s) para sim ou (n) para não:");
+                                    outroCartao = Console.ReadLine()!.ToLower();
+                                }
+                                if(outroCartao == "s"){
+                                    pagamentoCredito.SalvarCartao(bandeira, numeroCartao, titular, cvv);
+                                    creditoCadastrado = true;
+                                }
+                            }
                         
                         break;
                     
@@ -189,122 +204,115 @@ namespace Projeto_loja_virtual
                         if(creditoCadastrado == false){
                             Console.WriteLine($"\nCadastro de novo cartão:");
                 
-            Console.WriteLine($"\nQual a bandeira do cartão:");
-            bandeira = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual a bandeira do cartão:");
+                            bandeira = Console.ReadLine()!;
 
-            while(bandeira == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para a bandeira do cartão:");
-                bandeira = Console.ReadLine()!;
-            }
+                            while(bandeira == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para a bandeira do cartão:");
+                                bandeira = Console.ReadLine()!;
+                            }
 
-            Console.WriteLine($"\nQual o número do cartão:");
-            numeroCartao = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual o número do cartão:");
+                            numeroCartao = Console.ReadLine()!;
 
-            while(numeroCartao == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o número do cartão:");
-                numeroCartao = Console.ReadLine()!;
-            }
+                            while(numeroCartao == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o número do cartão:");
+                                numeroCartao = Console.ReadLine()!;
+                            }
 
-            Console.WriteLine($"\nQual o titular do cartão:");
-            titular = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual o titular do cartão:");
+                            titular = Console.ReadLine()!;
 
-            while(titular == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o titular do cartão:");
-                titular = Console.ReadLine()!;
-            }
+                            while(titular == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o titular do cartão:");
+                                titular = Console.ReadLine()!;
+                            }
 
-            Console.WriteLine($"\nQual o cvv do cartão:");
-            cvv = Console.ReadLine()!;
+                            Console.WriteLine($"\nQual o cvv do cartão:");
+                            cvv = Console.ReadLine()!;
 
-            while(cvv == ""){
-                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o cvv do cartão:");
-                cvv = Console.ReadLine()!;
-            }
+                            while(cvv == ""){
+                                Console.WriteLine($"Campo digitado inválido. Digite um valor válido para o cvv do cartão:");
+                                cvv = Console.ReadLine()!;
+                            }
+                            
                             Console.WriteLine(pagamentoCredito.SalvarCartao(bandeira, numeroCartao, titular, cvv));
                             creditoCadastrado = true;
                         }
+
+                        if(creditoCadastrado){
+                            Console.WriteLine($"\nDeseja cadastrar este mesmo cartão para Débito? (s/n)");
+                            outroCartao = Console.ReadLine()!.ToLower();
+                            while(outroCartao != "s" && outroCartao != "n"){
+                                Console.WriteLine($"Opção informada inválida. Escolha entre (s) para sim ou (n) para não:");
+                                outroCartao = Console.ReadLine()!.ToLower();
+                            }
+                            if(outroCartao == "s"){
+                                pagamentoDebito.SalvarCartao(bandeira, numeroCartao, titular, cvv);
+                                debitoCadastrado = true;
+                            }
+                        }
+
                         break;
 
                     case "3":
-                        MenuInicial(valorInformado);
+                        MenuInicial(valorInformado, creditoCadastrado, debitoCadastrado);
                         break;
                 }
 
-                if(cadastroCartao == "1"){
-                    Console.WriteLine($"\nDeseja cadastrar este mesmo cartão para Crétito? (s/n)");
-                    outroCartao = Console.ReadLine()!.ToLower();
-                    while(outroCartao != "s" && outroCartao != "n"){
-                        Console.WriteLine($"Opção informada inválida. Escolha entre (s) para sim ou (n) para não:");
-                        outroCartao = Console.ReadLine()!.ToLower();
-                    }
-                    if(outroCartao == "s"){
-                        pagamentoCredito.SalvarCartao(bandeira, numeroCartao, titular, cvv);
-                        creditoCadastrado = true;
-                    }
-                }else{
-                    Console.WriteLine($"\nDeseja cadastrar este mesmo cartão para Débito?");
-                    outroCartao = Console.ReadLine()!.ToLower();
-                    while(outroCartao != "s" && outroCartao != "n"){
-                        Console.WriteLine($"Opção informada inválida. Escolha entre (s) para sim ou (n) para não:");
-                        outroCartao = Console.ReadLine()!.ToLower();
-                    }
-                    if(outroCartao == "s"){
-                        pagamentoDebito.SalvarCartao(bandeira, numeroCartao, titular, cvv);
-                        debitoCadastrado = true;
-                    }
-                }
                 
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.Clear();
-                Console.WriteLine($"\nValor da compra: {valorInformado}\n");
+                Console.WriteLine($"\nValor da compra: {valorInformado.ToString("C", new CultureInfo("pt-br"))}\n");
                 Console.WriteLine(@$"Escolha dentre as opções abaixo:
 
                 [1] Pagar com o Cartão de Débito
                 [2] Pagar com o Cartão de Crétido
-                [3] Voltar ao Menu Inicial
+                [3] Voltar ao Menu de Cartão
                 ");
                 Console.ResetColor();
                 resposta = Console.ReadLine()!;
                 switch(resposta) {
                     case"1":
                         if(debitoCadastrado){
-                            pagamentoDebito.Pagar();
-                        do {
-                        Console.WriteLine(@$"
-                        [1] Finalizar compra
-                        [2] Cancelar Operação
-                        ");
-                            Console.ForegroundColor = ConsoleColor.DarkGray;
-                            Console.WriteLine($"Insira o valor desejado:");
-                            Console.ResetColor();
-                            input = Console.ReadLine()!;
-                            switch(input) {
-                                case "1":
-                                Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine($"\nCompra Finalizada...");
-                                Console.ResetColor();
+                            pagamentoDebito.Pagar(debitoCadastrado, creditoCadastrado);
+                                do {
+                                Console.WriteLine(@$"
+                                [1] Finalizar compra
+                                [2] Cancelar Operação
+                                ");
+                                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                                    Console.WriteLine($"Insira o valor desejado:");
+                                    Console.ResetColor();
+                                    input = Console.ReadLine()!;
+                                    switch(input) {
+                                        case "1":
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine($"\nCompra Finalizada...");
+                                        Console.ResetColor();
 
-                                // Como ainda n tenho nenhuma váriavel eu n botei pra imprimir o novo saldo ent só ta saindo do programa
-                                Environment.Exit(0);
-                                break;
-                                case"2":
-                                pagamentoDebito.Cancelar();
-                                Console.Clear();
-                                break;
+                                        // Como ainda n tenho nenhuma váriavel eu n botei pra imprimir o novo saldo ent só ta saindo do programa
+                                        Environment.Exit(0);
+                                        break;
+                                        case"2":
+                                        pagamentoDebito.Cancelar();
+                                        Console.Clear();
+                                        MenuInicial(valorInformado, creditoCadastrado, debitoCadastrado);
+                                        break;
 
-                                default:
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.Clear();
-                                Console.WriteLine($"Valor inválido, tente novamente...");
-                                Console.ResetColor();
-                                break;
-                            }
-                            
-                    } while(input != "2");
+                                        default:
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Clear();
+                                        Console.WriteLine($"Valor inválido, tente novamente...");
+                                        Console.ResetColor();
+                                        break;
+                                    }
+                                    
+                            } while(input != "2");
                         } else{
                             Console.WriteLine($"Não há um cartão de débito cadastrado. Pressione ENTER para voltar ao menu de cadastro:");
                             Console.ReadLine();
-                            MenuCartao(valorInformado);
+                            MenuCartao(valorInformado, creditoCadastrado, debitoCadastrado);
                         }
 
                     break;
@@ -312,7 +320,7 @@ namespace Projeto_loja_virtual
                     case"2":
 
                     //Cartão de Crédito
-                    if(debitoCadastrado){
+                    if(creditoCadastrado){
                         pagamentoCredito.Pagar();
                         do {
                         Console.WriteLine(@$"
@@ -335,6 +343,7 @@ namespace Projeto_loja_virtual
                                 case"2":
                                 pagamentoCredito.Cancelar();
                                 Console.Clear();
+                                MenuInicial(valorInformado, creditoCadastrado, debitoCadastrado);
                                 break;
                                 default:
                                 Console.ForegroundColor = ConsoleColor.Red;
@@ -346,9 +355,9 @@ namespace Projeto_loja_virtual
                             
                     } while(input != "2");
                     }else{
-                        Console.WriteLine($"Não há um cartão de crédito cadastrado. Pressione ENTER para voltar ao menu inicial:");
+                        Console.WriteLine($"Não há um cartão de crédito cadastrado. Pressione ENTER para voltar ao menu de cartão:");
                         Console.ReadLine();
-                        MenuCartao(valorInformado);
+                        MenuCartao(valorInformado, creditoCadastrado, debitoCadastrado);
                     }
 
                     break;

@@ -22,6 +22,7 @@ namespace Projeto_loja_virtual
             Console.WriteLine($"Limite atual do cartão: {Limite.ToString("C", new CultureInfo("pt-br"))}");
             Console.ResetColor();
         }
+        public override void Pagar(bool debitoCadastrado, bool creditoCadastrado){}
         public override void Pagar()
         {
             Console.WriteLine();
@@ -36,7 +37,7 @@ namespace Projeto_loja_virtual
                 this.Parcelas = int.Parse(Console.ReadLine()!);
             }
 
-            this.ValorParcela = this.Valor / this.Parcelas;
+            this.ValorParcela = this.ValorInicial / this.Parcelas;
 
 
             do
@@ -46,7 +47,7 @@ namespace Projeto_loja_virtual
                     Console.WriteLine($"\nLimite do cartão excedido");
                     Console.WriteLine($"\nSelecione um número de parcelas pensando em valores que não excedam o limte de seu cartão:");
                     this.Parcelas = int.Parse(Console.ReadLine()!);
-                    this.ValorParcela = this.Valor / this.Parcelas;
+                    this.ValorParcela = this.ValorInicial / this.Parcelas;
                     this.ValorFinal = this.ValorParcela;
                 }
                 else if (this.Parcelas == 1)
@@ -59,15 +60,16 @@ namespace Projeto_loja_virtual
                     this.ValorFinal = this.ValorParcela * 1.05d;
 
                 }
-                else
+                else if(this.Parcelas > 6)
                 {
+                    this.ValorFinal = this.ValorParcela * 1.08d;
+
+                } else{
                     while (this.Parcelas > 12 || this.Parcelas <= 0)
                     {
                         Console.WriteLine($"Número de parcelas inválido. Digite entre 1 ou 12 parcelas");
                         this.Parcelas = int.Parse(Console.ReadLine()!);
                     }
-                    this.ValorFinal = this.ValorParcela * 1.08d;
-
                 }
             } while (this.ValorFinal > this.Limite);
 

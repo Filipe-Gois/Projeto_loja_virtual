@@ -17,4 +17,7 @@ Console.WriteLine($"\nInsira o valor da compra:");
                 valorInformado = float.Parse(Console.ReadLine()!);
             }
 
-MenuPrograma.MenuInicial(valorInformado);
+
+ bool debitoCadastrado = false;
+bool creditoCadastrado = false;
+MenuPrograma.MenuInicial(valorInformado, creditoCadastrado, debitoCadastrado);

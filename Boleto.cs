@@ -18,7 +18,7 @@ namespace Projeto_loja_virtual
 
         public void Registrar()
         {
-            this.Valor = this.Valor * 0.88f;
+            this.ValorFinal = this.ValorInicial * 0.88f;
 
             Console.WriteLine($"\n");
             Console.WriteLine($"Compras efetuadas no boleto tem 12% de desconto!!");
@@ -27,7 +27,7 @@ namespace Projeto_loja_virtual
             ____________________________________________________________________________
             
             Beneficiário: Projeto Loja Virtual
-            Valor do boleto: {this.Valor.ToString("C", new CultureInfo("pt-BR"))}
+            Valor do boleto: {this.ValorFinal.ToString("C", new CultureInfo("pt-BR"))}
             Código de barras: {CodigoBarras()}
             ____________________________________________________________________________
             ");
