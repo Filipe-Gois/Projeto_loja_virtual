@@ -7,30 +7,21 @@ namespace Projeto_loja_virtual
 {
     public class Debito : Cartao
     {
-        private float saldo;
+        private float saldo = 5000;
 
 
 
         public override void Pagar()
         {
-            Console.WriteLine($"Digite seu saldo:");
-            saldo = float.Parse(Console.ReadLine()!);
-             Console.Clear();
             if (saldo < Valor)
             {
-                Console.WriteLine($"Saldo não foi suficiente, aperte enter para encerar operação");
-                Console.ReadLine();
-
-                { Cancelar(); }
-
+                Console.WriteLine($"Saldo não insuficiente para a compra.");
+                Cancelar();
             }
             else
             {
-                Console.WriteLine($"O valor a ser pago sera: {this.Valor}");
+                Console.WriteLine($"\nO valor da compra a ser pago será de: {this.Valor:C2} e será debitado em sua conta corrente.");
                 saldo = saldo - Valor;
-                Console.WriteLine($"Seu saldo ficara: {this.saldo}");
-
-
             }
 
         }
