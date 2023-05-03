@@ -10,7 +10,7 @@ namespace Projeto_loja_virtual
         MenuClass menuPrograma = new MenuClass();
         public DateTime DataAtual {get; private set;} = DateTime.Now;
         public float ValorInicial;
-        public float ValorFinal;
+        public double ValorFinal;
 
         public DateTime GerarData(){
             DateTime DataFinal = new DateTime(DataAtual.Year, DataAtual.Month, DataAtual.Day + 3, DataAtual.Hour, DataAtual.Minute, DataAtual.Second);

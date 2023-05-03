@@ -7,10 +7,11 @@ namespace Projeto_loja_virtual
 {
     public class CartaoCredito : Cartao
     {
+        MenuClass novoMenu = new MenuClass();
         // Atributos
-        private float Limite = 1000;
+        private float Limite = 2000;
         public float ValorParcela;
-        public double ValorFinal;
+
         public int Parcelas;
 
         // Métodos
@@ -19,16 +20,22 @@ namespace Projeto_loja_virtual
         public void ExibirLimite()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Limite atual do cartão: {Limite.ToString("C", new CultureInfo("pt-br"))}");
+            Console.WriteLine($"Limite atual do cartão: {Limite:C2}");
             Console.ResetColor();
         }
-        public override void Pagar(bool cartaoCardastrado){}
-        public override void Pagar()
+        public override void Pagar() { }
+        public override void Pagar(bool cartaoCardastrado)
         {
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Blue;
 
             Console.WriteLine($"Informe em quantas parcelas deseja pagar o produto: (máximo de 12 parcelas)");
+            Console.WriteLine(@$"
+            [1x] - Sem juros
+            [2x - 6x] - Juros de 5%
+            [7x - 12x] - Juros de 8%
+            ");
+
             this.Parcelas = int.Parse(Console.ReadLine()!);
 
             while (this.Parcelas > 12 || this.Parcelas <= 0)
@@ -37,34 +44,38 @@ namespace Projeto_loja_virtual
                 this.Parcelas = int.Parse(Console.ReadLine()!);
             }
 
-            this.ValorParcela = this.ValorInicial / this.Parcelas;
-
 
             do
             {
-                if (this.ValorParcela > this.Limite)
+                if (this.ValorInicial > this.Limite)
                 {
                     Console.WriteLine($"\nLimite do cartão excedido");
-                    Console.WriteLine($"\nSelecione um número de parcelas pensando em valores que não excedam o limte de seu cartão:");
-                    this.Parcelas = int.Parse(Console.ReadLine()!);
-                    this.ValorParcela = this.ValorInicial / this.Parcelas;
-                    this.ValorFinal = this.ValorParcela;
+
+                    Cancelar();
+                    novoMenu.MenuInicial(this.ValorInicial, cartaoCardastrado);
+
                 }
-                else if (this.Parcelas == 1)
+
+                if (this.Parcelas == 1)
                 {
+                    this.ValorParcela = this.ValorInicial / this.Parcelas;
                     ValorFinal = this.ValorParcela;
 
                 }
                 else if (this.Parcelas <= 6)
                 {
+                    this.ValorParcela = this.ValorInicial / this.Parcelas;
                     this.ValorFinal = this.ValorParcela * 1.05d;
 
                 }
-                else if(this.Parcelas > 6)
+                else if (this.Parcelas > 6)
                 {
+                    this.ValorParcela = this.ValorInicial / this.Parcelas;
                     this.ValorFinal = this.ValorParcela * 1.08d;
 
-                } else{
+                }
+                else
+                {
                     while (this.Parcelas > 12 || this.Parcelas <= 0)
                     {
                         Console.WriteLine($"Número de parcelas inválido. Digite entre 1 ou 12 parcelas");
@@ -81,11 +92,11 @@ namespace Projeto_loja_virtual
 
             if (this.Parcelas > 1)
             {
-                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2).ToString("C", new CultureInfo("pt-br"))} de {this.Parcelas}x com juros.");
+                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2):C2} de {this.Parcelas}x com juros.");
             }
             else
             {
-                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2).ToString("C", new CultureInfo("pt-br"))} de {this.Parcelas}x sem juros.");
+                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2):C2)} de {this.Parcelas}x sem juros.");
             }
 
             Console.ResetColor();

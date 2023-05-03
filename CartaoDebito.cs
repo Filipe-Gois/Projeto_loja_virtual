@@ -8,7 +8,7 @@ namespace Projeto_loja_virtual
     public class Debito : Cartao
     {
         MenuClass menuCartao = new MenuClass();
-        public float Saldo {get; private set;} = 2000;
+        public double Saldo {get; private set;} = 2000;
 
 
         
