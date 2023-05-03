@@ -13,13 +13,13 @@ namespace Projeto_loja_virtual
 
         
         public override void Pagar(){}
-        public override void Pagar(bool debitoCadastrado, bool creditoCadastrado)
+        public override void Pagar(bool cartaoCardastrado)
         {
             if (Saldo < ValorInicial)
             {
                 Console.WriteLine($"\nSaldo insuficiente para a compra.");
                 Cancelar();
-                menuCartao.MenuInicial(this.ValorInicial, creditoCadastrado, debitoCadastrado);
+                menuCartao.MenuInicial(this.ValorInicial, cartaoCardastrado);
             }
             else
             {

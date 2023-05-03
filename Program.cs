@@ -18,6 +18,5 @@ Console.WriteLine($"\nInsira o valor da compra:");
             }
 
 
- bool debitoCadastrado = false;
-bool creditoCadastrado = false;
-MenuPrograma.MenuInicial(valorInformado, creditoCadastrado, debitoCadastrado);
+bool cartaoCardastrado = false;
+MenuPrograma.MenuInicial(valorInformado, cartaoCardastrado);

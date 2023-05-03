@@ -8,7 +8,7 @@ namespace Projeto_loja_virtual{
 
         // Métodos
         public abstract void Pagar();
-        public abstract void Pagar(bool creditoCadastrado, bool debitoCadastrado);
+        public abstract void Pagar(bool cartaoCardastrado);
 
         public string SalvarCartao(string bandeira, string numeroCartao, string titular, string cvv){
             this.Bandeira = bandeira;

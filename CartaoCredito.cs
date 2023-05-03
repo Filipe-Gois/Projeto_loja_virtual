@@ -22,7 +22,7 @@ namespace Projeto_loja_virtual
             Console.WriteLine($"Limite atual do cartão: {Limite.ToString("C", new CultureInfo("pt-br"))}");
             Console.ResetColor();
         }
-        public override void Pagar(bool debitoCadastrado, bool creditoCadastrado){}
+        public override void Pagar(bool cartaoCardastrado){}
         public override void Pagar()
         {
             Console.WriteLine();
