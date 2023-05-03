@@ -19,6 +19,7 @@ namespace Projeto_loja_virtual
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"            === Bem-vindo ===");
             Console.ResetColor();
+            Console.WriteLine($"\nValor da compra: {valorInformado}");
             Thread.Sleep(1000);
 
             do {
@@ -34,6 +35,7 @@ namespace Projeto_loja_virtual
             switch(resposta){
 
                 case"1":
+                Console.WriteLine($"\nValor da compra: {valorInformado}");
                 Boleto pagamentoBoleto = new Boleto();
                 Console.Clear();
                 //Boleto
@@ -127,6 +129,7 @@ namespace Projeto_loja_virtual
 
             do {
                 Console.Clear();
+                Console.WriteLine($"\nValor da compra: {valorInformado}\n");
                 Console.WriteLine(@$"Escolha dentre as opções de cartão abaixo:
 
                 [1] Cartão de Débito
@@ -252,6 +255,8 @@ namespace Projeto_loja_virtual
                 }
                 
                 Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.Clear();
+                Console.WriteLine($"\nValor da compra: {valorInformado}\n");
                 Console.WriteLine(@$"Escolha dentre as opções abaixo:
 
                 [1] Pagar com o Cartão de Débito
