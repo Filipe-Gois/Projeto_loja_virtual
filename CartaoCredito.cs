@@ -40,8 +40,10 @@ namespace Projeto_loja_virtual
 
             while (this.Parcelas > 12 || this.Parcelas <= 0)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Número de parcelas inválido. Digite entre 1 ou 12 parcelas");
                 this.Parcelas = int.Parse(Console.ReadLine()!);
+                Console.ResetColor();
             }
 
 
@@ -49,7 +51,9 @@ namespace Projeto_loja_virtual
             {
                 if (this.ValorInicial > this.Limite)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"\nLimite do cartão excedido");
+                    Console.ResetColor();
 
                     Cancelar();
                     novoMenu.MenuInicial(this.ValorInicial, cartaoCardastrado);
@@ -78,8 +82,10 @@ namespace Projeto_loja_virtual
                 {
                     while (this.Parcelas > 12 || this.Parcelas <= 0)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine($"Número de parcelas inválido. Digite entre 1 ou 12 parcelas");
                         this.Parcelas = int.Parse(Console.ReadLine()!);
+                        Console.ResetColor();
                     }
                 }
             } while (this.ValorFinal > this.Limite);
@@ -92,11 +98,11 @@ namespace Projeto_loja_virtual
 
             if (this.Parcelas > 1)
             {
-                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2):C2} de {this.Parcelas}x com juros.");
+                Console.WriteLine($"\nTotal: {ValorFinal:C2} de {this.Parcelas}x com juros.");
             }
             else
             {
-                Console.WriteLine($"\nTotal: {Math.Round(ValorFinal, 2):C2)} de {this.Parcelas}x sem juros.");
+                Console.WriteLine($"\nTotal: {ValorFinal:C2)} de {this.Parcelas}x sem juros.");
             }
 
             Console.ResetColor();

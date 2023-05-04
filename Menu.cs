@@ -186,10 +186,15 @@ namespace Projeto_loja_virtual
                 }
                 Console.Clear();
                 Console.WriteLine($"\nValor da compra: {valorInformado:C2}\n");
+                Console.WriteLine($"\nDados do cortão cadastrado:\n");
+                Console.WriteLine($"Titular do cartão: {titular}");
+                Console.WriteLine($"Bandeira do cartão: {bandeira}");
+                Console.WriteLine($"Número do cartão: {numeroCartao}");
+                Console.WriteLine($"Bandeira do cartão: {cvv}\n");
                 Console.WriteLine(@$"Escolha dentre as opções abaixo:
 
                 [1] Pagar com o Cartão de Débito
-                [2] Pagar com o Cartão de Crédido
+                [2] Pagar com o Cartão de Crédito
                 [3] Voltar ao Menu de Cartão
                 ");
                 resposta = Console.ReadLine()!;
